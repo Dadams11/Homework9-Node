@@ -1,6 +1,5 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./generateMarkdown');
 
 // Array of questions for user input
 const questions = [
@@ -59,6 +58,44 @@ function writeToFile(fileName, data) {
   );
 }
 
+// Function to generate the markdown content
+function generateMarkdown(data) {
+  const { title, description, installation, usage, contributing, tests, license, github, email } = data;
+
+  // Generate the content for the README file using the user's answers
+  return `# ${title}
+
+## Description
+${description}
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Installation
+${installation}
+
+## Usage
+${usage}
+
+## License
+This application is covered under the ${license} license.
+
+## Contributing
+${contributing}
+
+## Tests
+${tests}
+
+## Questions
+For any questions or concerns, please reach out to me via [GitHub](https://github.com/${github}) or email me at ${email}.
+`;
+}
+
 // Function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
@@ -67,45 +104,8 @@ function init() {
   });
 }
 
-function generateMarkdown(data) {
-    const { title, description, installation, usage, contributing, tests, license, github, email } = data;
-  
-    // Generate the content for the README file using the user's answers
-    return `# ${title}
-  
-  ## Description
-  ${description}
-  
-  ## Table of Contents
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-  
-  ## Installation
-  ${installation}
-  
-  ## Usage
-  ${usage}
-  
-  ## License
-  This application is covered under the ${license} license.
-  
-  ## Contributing
-  ${contributing}
-  
-  ## Tests
-  ${tests}
-  
-  ## Questions
-  For any questions or concerns, please reach out to me via [GitHub](https://github.com/${github}) or email me at ${email}.
-  `;
-   }
-  
-  module.exports = generateMarkdown;
-  
-
 // Function call to initialize app
 init();
+
+// Export the generateMarkdown function
+module.exports = generateMarkdown;
