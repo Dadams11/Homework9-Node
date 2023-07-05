@@ -108,4 +108,4 @@ function init() {
 init();
 
 // Export the generateMarkdown function
-module.exports = generateMarkdown;
+// module.exports = generateMarkdown;
