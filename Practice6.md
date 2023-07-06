@@ -1,4 +1,4 @@
-# practice
+# Practice
 
 ## Description
 none
@@ -18,7 +18,7 @@ none
 none
 
 ## License
-This application is covered under the MIT license.
+This application is covered under the Apache 2.0 license.
 
 ## Contributing
 none
@@ -27,4 +27,4 @@ none
 none
 
 ## Questions
-For any questions or concerns, please reach out to me via [GitHub](https://github.com/Dadams11) or email me at adams.1743@osu.edu.
+For any questions or concerns, please reach out to me via [GitHub](https://github.com/Dadms11) or email me at adams.1743@osu.edu.

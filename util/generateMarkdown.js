@@ -1,13 +1,13 @@
 // Function to return the license badge based on the license selection
 function renderLicenseBadge(license) {
   if (license === 'MIT') {
-    return '<a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>';
+    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
   } else if (license === 'Apache 2.0') {
-    return '<a href="https://opensource.org/licenses/Apache-2.0"><img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"></a>';
+    return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
   } else if (license === 'GPL 3.0') {
-    return '<a href="https://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg"></a>';
+    return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
   } else if (license === 'BSD 3-Clause') {
-    return '<a href="https://opensource.org/licenses/BSD-3-Clause"><img alt="License: BSD 3-Clause" src="https://img.shields.io/badge/License-BSD%203--Clause-blue.svg"></a>';
+    return '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)';
   } else {
     return '';
   }
@@ -16,13 +16,13 @@ function renderLicenseBadge(license) {
 // Function to return the license link based on the license selection
 function renderLicenseLink(license) {
   if (license === 'MIT') {
-    return 'https://opensource.org/licenses/MIT';
+    return '[MIT](https://opensource.org/licenses/MIT)';
   } else if (license === 'Apache 2.0') {
-    return 'https://opensource.org/licenses/Apache-2.0';
+    return '[Apache 2.0](https://opensource.org/licenses/Apache-2.0)';
   } else if (license === 'GPL 3.0') {
-    return 'https://www.gnu.org/licenses/gpl-3.0';
+    return '[GPL 3.0](https://www.gnu.org/licenses/gpl-3.0)';
   } else if (license === 'BSD 3-Clause') {
-    return 'https://opensource.org/licenses/BSD-3-Clause';
+    return '[BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)';
   } else {
     return '';
   }
@@ -34,7 +34,7 @@ function renderLicenseSection(license) {
     return '';
   } else {
     return `## License
-This application is covered under the [${license}](${renderLicenseLink(license)}) license.`;
+This application is covered under the ${renderLicenseLink(license)} license.`;
   }
 }
 
@@ -44,7 +44,6 @@ function generateMarkdown(data) {
 
   // Generate the content for the README file using the user's answers
   const licenseBadge = renderLicenseBadge(license);
-  const licenseSection = renderLicenseSection(license);
 
   return `# ${title}
 
@@ -53,7 +52,7 @@ ${licenseBadge}
 ## Description
 ${description}
 
-${licenseSection}
+${renderLicenseSection(license)}
 `;
 }
 
