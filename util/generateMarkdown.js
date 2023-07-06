@@ -1,6 +1,4 @@
 // Function to return a license badge based on the license selection
-
-// Function to return a license badge based on the license selection
 function renderLicenseBadge(license) {
   if (license === 'MIT') {
     return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';

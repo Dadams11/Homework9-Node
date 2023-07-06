@@ -49,14 +49,19 @@ const questions = [
     name: 'email',
     message: 'Enter your email address:',
   },
+  {
+  type: 'input',
+  name: 'fileName',
+  message: 'What do you want to call this readme?',
+  }
 ];
 
 // Function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) =>
-    err ? console.error(err) : console.log('README.md created successfully!')
-  );
+  fs.appendFile(`${fileName}.md`, data, 
+    (err) => err ? console.error(err) : console.log(`${fileName}.md has been generated.`))
 }
+ 
 
 // Function to generate the markdown content
 function generateMarkdown(data) {
@@ -99,13 +104,13 @@ For any questions or concerns, please reach out to me via [GitHub](https://githu
 // Function to initialize app
 function init() {
   inquirer.prompt(questions).then((answers) => {
+    const { fileName } = answers; 
+    // Destructure the fileName from the answers object
     const readmeContent = generateMarkdown(answers);
-    writeToFile('README.md', readmeContent);
+    writeToFile(`${fileName}`, readmeContent);
   });
 }
 
 // Function call to initialize app
 init();
 
-// Export the generateMarkdown function
-// module.exports = generateMarkdown;
