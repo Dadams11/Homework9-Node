@@ -1,41 +1,35 @@
 // Function to return the license badge based on the license selection
 function renderLicenseBadge(license) {
-  if (license === 'MIT') {
-    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
-  }  if (license === 'Apache 2.0') {
-    return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-  }  if (license === 'GPL 3.0') {
-    return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
-  }  if (license === 'BSD 3-Clause') {
-    return '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)';
-  } else {
-    return '';
-  }
+  const licenseBadges = {
+    MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)',
+    'Apache 2.0': '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
+    'GPL 3.0': '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
+    'BSD 3-Clause': '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
+  };
+
+  return licenseBadges[license] || '';
 }
 
 // Function to return the license link based on the license selection
 function renderLicenseLink(license) {
-  if (license === 'MIT') {
-    return '[MIT](https://opensource.org/licenses/MIT)';
-  }  if (license === 'Apache 2.0') {
-    return '[Apache 2.0](https://opensource.org/licenses/Apache-2.0)';
-  }  if (license === 'GPL 3.0') {
-    return '[GPL 3.0](https://www.gnu.org/licenses/gpl-3.0)';
-  }  if (license === 'BSD 3-Clause') {
-    return '[BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)';
-  } else {
-    return '';
-  }
+  const licenseLinks = {
+    MIT: '[MIT](https://opensource.org/licenses/MIT)',
+    'Apache 2.0': '[Apache 2.0](https://opensource.org/licenses/Apache-2.0)',
+    'GPL 3.0': '[GPL 3.0](https://www.gnu.org/licenses/gpl-3.0)',
+    'BSD 3-Clause': '[BSD 3-Clause](https://opensource.org/licenses/BSD-3-Clause)',
+  };
+
+  return licenseLinks[license] || '';
 }
 
 // Function to return the license section of the README
 function renderLicenseSection(license) {
   if (license === 'None') {
     return '';
-  } if {
-    return `## License
-This application is covered under the ${renderLicenseLink(license)} license.`;
   }
+
+  return `## License
+This application is covered under the ${renderLicenseLink(license)} license.`;
 }
 
 // Function to generate markdown for README
