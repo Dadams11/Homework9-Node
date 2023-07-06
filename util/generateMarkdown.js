@@ -1,4 +1,4 @@
-// Function to return a license badge based on the license selection
+// Function to return the license badge based on the license selection
 function renderLicenseBadge(license) {
   if (license === 'MIT') {
     return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
@@ -43,12 +43,15 @@ function generateMarkdown(data) {
   const { title, description, license } = data;
 
   // Generate the content for the README file using the user's answers
-  return `# ${title} ${renderLicenseBadge(license)}
+  const licenseBadge = renderLicenseBadge(license);
+  const licenseSection = renderLicenseSection(license);
+
+  return `# ${title} ${licenseBadge}
 
 ## Description
 ${description}
 
-${renderLicenseSection(license)}
+${licenseSection}
 `;
 }
 
