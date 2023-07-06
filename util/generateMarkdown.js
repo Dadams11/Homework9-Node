@@ -39,9 +39,23 @@ This application is covered under the [${license}](${renderLicenseLink(license)}
 }
 
 // Function to generate markdown for README
+f// Function to generate markdown for README
 function generateMarkdown(data) {
   const { title, description, license } = data;
 
+  // Generate the content for the README file using the user's answers
+  const licenseBadge = renderLicenseBadge(license);
+
+  return `# ${title}
+
+${licenseBadge}
+
+## Description
+${description}
+
+${renderLicenseSection(license)}
+`;
+}
   // Generate the content for the README file using the user's answers
   const licenseBadge = renderLicenseBadge(license);
   const licenseSection = renderLicenseSection(license);
@@ -55,6 +69,6 @@ ${description}
 
 ${licenseSection}
 `;
-}
+
 
 module.exports = generateMarkdown;
