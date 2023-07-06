@@ -1,4 +1,4 @@
-# Practice9
+# Practice10
 
 ## Description
 none
@@ -18,7 +18,7 @@ none
 none
 
 ## License
-This application is covered under the Apache 2.0 license.
+This application is covered under the MIT license.
 
 ## Contributing
 none
