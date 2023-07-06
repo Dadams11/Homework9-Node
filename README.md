@@ -1,7 +1,7 @@
 # practice
 
 ## Description
-no description
+none
 
 ## Table of Contents
 - [Installation](#installation)
@@ -12,19 +12,19 @@ no description
 - [Questions](#questions)
 
 ## Installation
-no install
+none
 
 ## Usage
-no usage
+none
 
 ## License
 This application is covered under the Apache 2.0 license.
 
 ## Contributing
-no contributions needed
+none
 
 ## Tests
-no test instructions
+none
 
 ## Questions
 For any questions or concerns, please reach out to me via [GitHub](https://github.com/Dadams11) or email me at adams.1743@osu.edu.
