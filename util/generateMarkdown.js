@@ -1,13 +1,13 @@
 // Function to return the license badge based on the license selection
 function renderLicenseBadge(license) {
   if (license === 'MIT') {
-    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+    return '<a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>';
   } else if (license === 'Apache 2.0') {
-    return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+    return '<a href="https://opensource.org/licenses/Apache-2.0"><img alt="License: Apache 2.0" src="https://img.shields.io/badge/License-Apache_2.0-blue.svg"></a>';
   } else if (license === 'GPL 3.0') {
-    return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+    return '<a href="https://www.gnu.org/licenses/gpl-3.0"><img alt="License: GPL v3" src="https://img.shields.io/badge/License-GPLv3-blue.svg"></a>';
   } else if (license === 'BSD 3-Clause') {
-    return '[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)';
+    return '<a href="https://opensource.org/licenses/BSD-3-Clause"><img alt="License: BSD 3-Clause" src="https://img.shields.io/badge/License-BSD%203--Clause-blue.svg"></a>';
   } else {
     return '';
   }
@@ -39,41 +39,8 @@ This application is covered under the [${license}](${renderLicenseLink(license)}
 }
 
 // Function to generate markdown for README
-// Function to generate markdown for README
 function generateMarkdown(data) {
   const { title, description, license } = data;
-
-  // Generate the content for the README file using the user's answers
-  let licenseBadge = '';
-  
-  if (license) {
-    licenseBadge = `[![License](https://img.shields.io/badge/License-${encodeURIComponent(license)}-blue.svg)](https://opensource.org/licenses/${encodeURIComponent(license)})`;
-  }
-
-  return `# ${title} ${licenseBadge}
-
-## Description
-${description}
-
-${renderLicenseSection(license)}
-`;
-}
-
-module.exports = generateMarkdown;
-
-
-  // Generate the content for the README file using the user's answers
- // const licenseBadge = renderLicenseBadge(license);
-
-  return `# ${title}
-
-${licenseBadge}
-
-## Description
-${description}
-
-${renderLicenseSection(license)}
-`;
 
   // Generate the content for the README file using the user's answers
   const licenseBadge = renderLicenseBadge(license);
@@ -88,6 +55,6 @@ ${description}
 
 ${licenseSection}
 `;
-
+}
 
 module.exports = generateMarkdown;
