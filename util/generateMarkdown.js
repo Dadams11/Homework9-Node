@@ -38,20 +38,51 @@ This application is covered under the ${renderLicenseLink(license)} license. Cli
   }
 }
 
+
 // Function to generate markdown for README
 function generateMarkdown(data) {
-  const { title, license } = data;
+  const {title , description, installation, usage, contributing,tests, license, github, email} = data;
+  
 
   // Generate the content for the README file using the user's answers
-  const licenseBadge = renderLicenseBadge(license);
-  const licenseSection = renderLicenseSection(license);
+  
+const licenseSection = renderLicenseSection(license);
 
-  return `# ${title}
+  
+  return ` # ${title}
+${renderLicenseBadge(license)}
 
-${licenseBadge}
+  ## Description
+  ${description}
+  
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  
+  ## Installation
+  ${installation}
+  
+  ## Usage
+  ${usage}
+  
+  ## ${renderLicenseSection(license)}
+  This application is covered under the ${license} license.
+  
+  ## Contributing
+  ${contributing}
+  
+  ## Tests
+  ${tests}
+  
+  ## Questions
+  For any questions or concerns, please reach out to me via [GitHub](https://github.com/${github}) or email me at ${email}.
+  `;
+  }
 
-${licenseSection}
-`;
-}
+
 
 module.exports = generateMarkdown;
