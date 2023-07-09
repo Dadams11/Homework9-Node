@@ -1,7 +1,7 @@
 # practice
 
 ## Description
-none
+This application was created to generate a high-quality, professional README depending on a series of questions the user answers in their command line using Node.js
 
 ## Table of Contents
 - [Installation](#installation)
@@ -17,9 +17,6 @@ none
 ## Usage
 none
 
-## License
-This application is covered under the Apache 2.0 license.
-
 ## Contributing
 none
 
@@ -28,3 +25,5 @@ none
 
 ## Questions
 For any questions or concerns, please reach out to me via [GitHub](https://github.com/Dadams11) or email me at adams.1743@osu.edu.
+
+Links: 
